@@ -1,19 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface InitialNumState {
-  number: Number[];
+interface InitialState {
+  rewardCount: Number;
+  rewardType: string;
 }
-const initialState: InitialNumState = {
-  number: [],
+const initialState: InitialState = {
+  rewardCount: 0,
+  rewardType: '',
 };
 
 const slice = createSlice({
-  name: 'allNums',
+  name: 'rewards',
   initialState,
   reducers: {
-    setNumber(state, action: PayloadAction<{ number: Number }>) {
-      const { number } = action.payload;
-      state.number.push(number);
+    setNumber(state, action: PayloadAction<{ count: Number }>) {
+      const { count } = action.payload;
+      state.rewardCount = count;
     },
   },
 });

@@ -12,7 +12,11 @@ const Container = styled.div`
   border: dotted;
 `;
 export const Stars: FC = () => {
-  const allStars = useSelector((state: RootState) => state.number);
-  const starItems = allStars.map((todo, i) => <Star key={i} />);
+  const rewardCount = useSelector(
+    (state: RootState) => state.rewards.rewardCount,
+  );
+  const starItems = [...Array(rewardCount).keys()].map((number) => (
+    <Star key={number} />
+  ));
   return <Container>{starItems}</Container>;
 };

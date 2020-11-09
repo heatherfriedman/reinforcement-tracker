@@ -30,7 +30,7 @@ export const NumberForm: FC = () => {
   const onSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      dispatch(actions.setNumber({ number: numberInput }));
+      dispatch(actions.setNumber({ count: numberInput }));
     },
     [dispatch, numberInput],
   );
